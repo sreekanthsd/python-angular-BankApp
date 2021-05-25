@@ -1,1 +1,14 @@
-<p>login works!</p>
+<body class="full">
+    <div class="net">Welcome to Net Banking {{aim}}</div>
+        <div class="acc">
+            <br>
+            <h6>Need an account?<a href=" Sign Up"> Sign Up</a></h6><br>
+            <input class="pa" type="text"  id="id" (change)="accnoChange($event)" placeholder="account number" [value]="accountNumber"><br>
+            <br>
+            <input class="pa" type="password" (change)="pwdChange($event)" id="pwd" placeholder="password"><br>
+            <br>
+            <button (click)="login()" type="submit" class="org">Log in</button> 
+            <br><br>
+            <a href="forgot password">forgot password?</a><br>  
+        </div>
+</body>
