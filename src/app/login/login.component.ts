@@ -33,9 +33,9 @@ export class LoginComponent implements OnInit {
     console.log(this.pswd);
   }
   
-  login(a:any,p:any){
-      let acno = a.value
-      let pwd = p.value
+  login(){
+      let acno = this.accnum
+      let pwd = this.pswd
       let details = this.accountdetails 
       if (acno in details) {
           if (pwd == details[acno]["password"]) {
