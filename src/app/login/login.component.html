@@ -3,11 +3,11 @@
         <div class="acc">
             <br>
             <h6>Need an account?<a href=" Sign Up"> Sign Up</a></h6><br>
-            <input class="pa" type="text"  id="id" (change)="accnoChange($event)" placeholder="account number" [value]="accountNumber"><br>
+            <input class="pa" type="text"  id="id" #accnum placeholder="account number" [value]="accountNumber"><br>
             <br>
-            <input class="pa" type="password" (change)="pwdChange($event)" id="pwd" placeholder="password"><br>
+            <input class="pa" type="password" #pwrd id="pwd" placeholder="password"><br>
             <br>
-            <button (click)="login()" type="submit" class="org">Log in</button> 
+            <button (click)="login(accnum,pwrd)" type="submit" class="org">Log in</button> 
             <br><br>
             <a href="forgot password">forgot password?</a><br>  
         </div>
