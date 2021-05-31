@@ -1,4 +1,4 @@
-<!-- <form (ngSubmit)="register()"> -->
+<form [formGroup]="registerForm" (ngSubmit)="register()">
 
 <div class="container">
     <div class="row">
@@ -9,11 +9,11 @@
                 <h4> <br> <h4>{{aim}}</h4></h4><br>
 
 
-                <input id="uname" type="text" class="text" name="uname" [(ngModel)]="uname" placeholder="Username"> <br><br>
+                <input id="uname" type="text" class="text" formControlName="uname" placeholder="Username"> <br><br>
             
-                <input id="accno" type="text" class="text" name="accnum" [(ngModel)]="accnum" placeholder="Account Number"> <br><br>
+                <input id="accno" type="text" class="text" formControlName="accnum" placeholder="Account Number"> <br><br>
             
-                <input id="pswd" type="password" class="text" name="pswd" [(ngModel)]="pswd" placeholder="password"> <br><br>
+                <input id="pswd" type="password" class="text" formControlName="pswd" placeholder="password"> <br><br>
 
                 <input type="button" value="Register" (click)="register()" class="button button1 butefect"> <br><br>
 
@@ -25,4 +25,4 @@
     </div>
 </div>
 
-<!-- </form> -->
+</form>

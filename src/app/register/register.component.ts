@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -12,7 +13,13 @@ export class RegisterComponent implements OnInit {
   pswd=""
   uname=""
   aim="Registration Page"
-  constructor(private ds:DataService,private router:Router) { }
+
+  registerForm = this.fb.group({
+      uname :['', [Validators.required]],
+      accnum :['', [Validators.required]],
+      pswd :['', [Validators.required]]
+  })
+  constructor(private ds:DataService,private router:Router,private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -20,10 +27,13 @@ export class RegisterComponent implements OnInit {
   register(){
     
 
-    var acno = this.accnum;
-    var password = this.pswd;
-    var name = this.uname;
+    var acno = this.registerForm.value.accnum;
+    var password = this.registerForm.value.pswd;
+    var name = this.registerForm.value.uname;
+    // console.log(this.registerForm);
     
+    if(this.registerForm.valid){
+      alert("Valid Form")
     var result = this.ds.register(name,acno,password)
 
     if(result){
@@ -34,7 +44,12 @@ export class RegisterComponent implements OnInit {
       alert("User is already exists,Please Log In")
 
     }
+}
+  else{
+    alert("Invalid Form")
+  }
 
+  
   }
 
 }
