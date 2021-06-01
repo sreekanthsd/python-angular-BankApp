@@ -1,9 +1,10 @@
 .full{
     background-image: url(https://d1kxiaxkq0bgmn.cloudfront.net/wp-content/uploads/2019/10/Open-Banking-APIs.jpg);
     height: 900px;
-    width: 900px;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 .acc{
     border: 6px solid rgb(248, 241, 241);

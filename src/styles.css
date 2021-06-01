@@ -2,9 +2,10 @@
 .full{
     background-image: url(https://thedigitalfifth.com/wp-content/uploads/2017/09/reasons-internet-banking_opt.jpg);
     height: 900px;
-    width: 900px;
+    width: 100%;
+    margin-top: 0%;
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: cover;
 }
 .org{
     background-color: rgb(66, 66, 133);
