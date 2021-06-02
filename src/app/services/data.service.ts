@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ArgumentOutOfRangeError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +50,29 @@ export class DataService {
 
 
 
+  }
+
+
+  deposit(accno:any,pswd:any,amt:any){
+
+    var amount= parseInt(amt)
+    let dataset = this.accountdetails;
+
+    if (accno in dataset) {
+      if (pswd == dataset[accno]["password"]) {
+
+        dataset[accno]["amount"] += amount;
+          return true;
+      }
+      else{
+        alert("Incorrect Password");
+        return false;
+      }
+    }
+    else{
+      alert("Invalid Account")
+      return false;
+    }
   }
 
 }

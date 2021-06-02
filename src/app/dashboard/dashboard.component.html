@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dashboard.component.css">
-    <script src="account.js"></script>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-</head>
+
 <body class="full">
    <div class="container">
     <div class="row">
     <div class="col-4"></div>
     <div class="col-4>">
     <div class="acc">
-        <input id="ide" class="form-control" type="text" placeholder="Account number"><br>
-        <input id="pwde" class="form-control" type="password" placeholder="Password"><br>
-        <input class="form-control" type="text" id="amnt" placeholder="Amount"><br><br>
+        <form (ngSubmit)="deposit()">
 
-        <button id="c2" type="button" onclick="Bank.deposit()" class="btn btn-success">Deposit</button>
+        <input id="ide" class="form-control" type="text" name="acno" [(ngModel)]="acno" placeholder="Account number"><br>
+        <input id="pwde" class="form-control" type="password" name="pswd" [(ngModel)]="pswd" placeholder="Password"><br>
+        <input class="form-control" type="text" id="amnt" name="amount" [(ngModel)]="amount" placeholder="Amount"><br><br>
+
+        <button id="c2" type="submit" class="btn btn-success">Deposit</button>
         <!-- <button type="button" class="btn btn-info">Withdraw</button> -->
         <!-- <button type="button" onclick="Bank.withdraw()" class="btn btn-danger">Withdraw</button> -->
+    </form>
     </div>
    </div>
    <div class="col-4"></div>
@@ -37,11 +29,14 @@
     <div class="col-4"></div>
     <div class="col-4>">
     <div class="accnu">
-        <input id="ide" class="form-control" type="text" placeholder="Account number"><br>
-        <input id="pwde" class="form-control" type="password" placeholder="Password"><br>
-        <input class="form-control" type="text" id="amnt" placeholder="Amount"><br><br>
 
-        <button type="button" onclick="Bank.withdraw()" class="btn btn-danger">Withdraw</button>
+    <form (ngSubmit)="withdraw()">
+        <input id="ide" class="form-control" type="text" name="wacno" [(ngModel)]="wacno" placeholder="Account number"><br>
+        <input id="pwde" class="form-control" type="password" name="wpswd" [(ngModel)]="wpswd" placeholder="Password"><br>
+        <input class="form-control" type="text" id="amnt" name="wamount" [(ngModel)]="wamount" placeholder="Amount"><br><br>
+
+        <button type="button" class="btn btn-danger">Withdraw</button>
+    </form>
     </div>
     </div>
     <div class="col-4"></div>
@@ -49,4 +44,3 @@
    </div>
    
 </body>
-</html>
