@@ -61,8 +61,8 @@ export class DataService {
     if (accno in dataset) {
       if (pswd == dataset[accno]["password"]) {
 
-        dataset[accno]["amount"] += amount;
-          return true;
+        dataset[accno]["balance"] += amount;
+          return dataset[accno]["balance"];
       }
       else{
         alert("Incorrect Password");
@@ -73,6 +73,35 @@ export class DataService {
       alert("Invalid Account")
       return false;
     }
+  }
+
+
+  withdraw(wacno:any,wpswd:any,amnt:any){
+
+    var amount1 = parseInt(amnt)
+    let dataset1 = this.accountdetails;
+
+    if(wacno in dataset1) {
+      if(wpswd == dataset1[wacno]["password"]){
+        if(dataset1[wacno]["balance"]>amount1){
+
+        dataset1[wacno]["balance"] -= amount1;
+        return dataset1[wacno]["balance"];
+        }
+        else{
+          alert("Insufficient Balance")
+        }
+      }
+      else{
+        alert("Incorrect Password");
+        return false;
+      }
+    }
+    else{
+      alert("Invalid Account");
+      return false;
+    }
+
   }
 
 }

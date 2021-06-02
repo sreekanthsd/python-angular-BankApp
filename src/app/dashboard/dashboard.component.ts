@@ -23,7 +23,6 @@ export class DashboardComponent implements OnInit {
 
   deposit(){
 
-    alert("clicked");
     var acno = this.acno;
     var pswd = this.pswd;
     var amount = this.amount;
@@ -32,12 +31,22 @@ export class DashboardComponent implements OnInit {
     const result = this.dataService.deposit(acno,pswd,amount)
 
     if(result){
-    alert("amount" + amount + "credited successfully and new balance is : "+ result);
+    alert("amount " + amount + " is credited successfully and new balance is : "+ result);
     }
   }
 
   withdraw(){
-    alert("amount debited successfully")
+ 
+    var wacno = this.wacno;
+    var wpswd = this.wpswd;
+    var wamount = this.wamount;
+
+
+    const result1 = this.dataService.withdraw(wacno,wpswd,wamount)
+
+    if(result1){
+    alert("amount " + wamount + " is debited successfully and new balance is: " + result1);
+    }
   }
 
 

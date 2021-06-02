@@ -11,9 +11,9 @@
         <input id="pwde" class="form-control" type="password" name="pswd" [(ngModel)]="pswd" placeholder="Password"><br>
         <input class="form-control" type="text" id="amnt" name="amount" [(ngModel)]="amount" placeholder="Amount"><br><br>
 
-        <button id="c2" type="submit" class="btn btn-success">Deposit</button>
-        <!-- <button type="button" class="btn btn-info">Withdraw</button> -->
-        <!-- <button type="button" onclick="Bank.withdraw()" class="btn btn-danger">Withdraw</button> -->
+        <button id="c2" type="submit" value="Deposit" class="btn btn-success">Deposit</button>
+        <!-- <button type="button" class="btn btn-info">Withdraw</button>
+        <button type="button" onclick="Bank.withdraw()" class="btn btn-danger">Withdraw</button> -->
     </form>
     </div>
    </div>
@@ -31,11 +31,12 @@
     <div class="accnu">
 
     <form (ngSubmit)="withdraw()">
-        <input id="ide" class="form-control" type="text" name="wacno" [(ngModel)]="wacno" placeholder="Account number"><br>
-        <input id="pwde" class="form-control" type="password" name="wpswd" [(ngModel)]="wpswd" placeholder="Password"><br>
-        <input class="form-control" type="text" id="amnt" name="wamount" [(ngModel)]="wamount" placeholder="Amount"><br><br>
 
-        <button type="button" class="btn btn-danger">Withdraw</button>
+        <input id="ide1" class="form-control" type="text" name="wacno" [(ngModel)]="wacno" placeholder="Account number"><br>
+        <input id="pwde1" class="form-control" type="password" name="wpswd" [(ngModel)]="wpswd" placeholder="Password"><br>
+        <input class="form-control" type="text" id="amnt1" name="wamount" [(ngModel)]="wamount" placeholder="Amount"><br><br>
+
+        <button type="submit" value="Withdraw" class="btn btn-danger">Withdraw</button>
     </form>
     </div>
     </div>
