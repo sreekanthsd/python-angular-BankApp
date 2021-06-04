@@ -1,13 +1,15 @@
-<form (ngSubmit)="login()">
+<form [formGroup]="loginForm" (ngSubmit)="login()">
 <body class="full">
     <div class="net">Welcome to Net Banking {{aim}}</div>
         <div class="acc">
             <br>
             <!-- <h6>Need an account?<a href=" Sign Up"> Sign Up</a></h6><br> -->
-            <input class="pa" type="text"  id="id" [(ngModel)]="accnum" name="accnum" placeholder="account number" [value]="accountNumber"><br>
+            <input class="pa" type="text"  id="id" formControlName="accnum" placeholder="account number"><br>
             <br>
-            <input class="pa" type="password" [(ngModel)]="pswd" name="pswd" id="pwd" placeholder="password"><br>
+            <div *ngIf = "(this.loginForm.get('accnum')?.touched || this.loginForm.get('accnum')?.dirty) && this.loginForm.get('accnum')?.errors" class="error">Invalid AccountNumber</div>
+            <input class="pa" type="password" formControlName="pswd" id="pwd" placeholder="password"><br>
             <br>
+            <div *ngIf = "(this.loginForm.get('pswd')?.touched || this.loginForm.get('pswd')?.dirty) && this.loginForm.get('pswd')?.errors" class="error">Invalid Password</div>
             <button type="submit" class="org">Log in</button> 
             <br><br>
             <a href="forgot password">forgot password?</a><br>  

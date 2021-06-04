@@ -5,12 +5,14 @@
     <div class="col-4"></div>
     <div class="col-4>">
     <div class="acc">
-        <form (ngSubmit)="deposit()">
+        <form [formGroup]="depositForm" (ngSubmit)="deposit()">
 
-        <input id="ide" class="form-control" type="text" name="acno" [(ngModel)]="acno" placeholder="Account number"><br>
-        <input id="pwde" class="form-control" type="password" name="pswd" [(ngModel)]="pswd" placeholder="Password"><br>
-        <input class="form-control" type="text" id="amnt" name="amount" [(ngModel)]="amount" placeholder="Amount"><br><br>
-
+        <input id="ide" class="form-control" type="text" formControlName="acno" placeholder="Account number"><br>
+        <div *ngIf = "(this.depositForm.get('acno')?.touched || this.depositForm.get('acno')?.dirty) && this.depositForm.get('acno')?.errors" class="error">Invalid AccountNumber</div>
+        <input id="pwde" class="form-control" type="password" formControlName="pswd" placeholder="Password"><br>
+        <div *ngIf = "(this.depositForm.get('pswd')?.touched || this.depositForm.get('pswd')?.dirty) && this.depositForm.get('pswd')?.errors" class="error">Invalid Password</div>
+        <input class="form-control" type="text" id="amnt" formControlName="amount" placeholder="Amount"><br><br>
+        <div *ngIf = "(this.depositForm.get('amount')?.touched || this.depositForm.get('amount')?.dirty) && this.depositForm.get('amount')?.errors" class="error">Invalid Amount</div>
         <button id="c2" type="submit" value="Deposit" class="btn btn-success">Deposit</button>
         <!-- <button type="button" class="btn btn-info">Withdraw</button>
         <button type="button" onclick="Bank.withdraw()" class="btn btn-danger">Withdraw</button> -->
@@ -30,11 +32,14 @@
     <div class="col-4>">
     <div class="accnu">
 
-    <form (ngSubmit)="withdraw()">
+    <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()">
 
-        <input id="ide1" class="form-control" type="text" name="wacno" [(ngModel)]="wacno" placeholder="Account number"><br>
-        <input id="pwde1" class="form-control" type="password" name="wpswd" [(ngModel)]="wpswd" placeholder="Password"><br>
-        <input class="form-control" type="text" id="amnt1" name="wamount" [(ngModel)]="wamount" placeholder="Amount"><br><br>
+        <input id="ide1" class="form-control" type="text" formControlName="wacno" placeholder="Account number"><br>
+        <div *ngIf = "(this.withdrawForm.get('wacno')?.touched || this.withdrawForm.get('wacno')?.dirty) && this.withdrawForm.get('wacno')?.errors" class="error">Invalid AccountNumber</div>
+        <input id="pwde1" class="form-control" type="password" formControlName="wpswd" placeholder="Password"><br>
+        <div *ngIf = "(this.withdrawForm.get('wpswd')?.touched || this.withdrawForm.get('wpswd')?.dirty) && this.withdrawForm.get('wpswd')?.errors" class="error">Invalid Password</div>
+        <input class="form-control" type="text" id="amnt1" formControlName="wamount" placeholder="Amount"><br><br>
+        <div *ngIf = "(this.withdrawForm.get('wamount')?.touched || this.withdrawForm.get('wamount')?.dirty) && this.withdrawForm.get('wamount')?.errors" class="error">Invalid Amount</div>
 
         <button type="submit" value="Withdraw" class="btn btn-danger">Withdraw</button>
     </form>

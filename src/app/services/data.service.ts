@@ -89,7 +89,8 @@ export class DataService {
         return dataset1[wacno]["balance"];
         }
         else{
-          alert("Insufficient Balance")
+          alert("Insufficient Balance");
+          return false
         }
       }
       else{
